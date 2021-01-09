@@ -2,7 +2,6 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { RestApiService } from 'src/app/service/rest-api.service';
-
 export interface TableElement {
   id: string;
   name: string;
