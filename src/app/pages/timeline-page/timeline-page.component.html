@@ -1,0 +1,61 @@
+<h1>Covid-19 ในประเทศไทย</h1>
+<h3>ข้อมูลวันที่ {{timelineData.UpdateDate}}</h3>
+<div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource">
+
+        <ng-container matColumnDef="no">
+            <th mat-header-cell *matHeaderCellDef> No. </th>
+            <td mat-cell *matCellDef="let element;let i = index"> {{i+1}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="NewConfirmed">
+            <th mat-header-cell *matHeaderCellDef> ผู้ป่วยรายใหม่ </th>
+            <td mat-cell *matCellDef="let element"> {{element.NewConfirmed}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="NewRecovered">
+            <th mat-header-cell *matHeaderCellDef> หายป่วย </th>
+            <td mat-cell *matCellDef="let element"> {{element.NewRecovered}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="NewHospitalized">
+            <th mat-header-cell *matHeaderCellDef> เข้ารับการรักษา </th>
+            <td mat-cell *matCellDef="let element"> {{element.NewHospitalized}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="NewDeaths">
+            <th mat-header-cell *matHeaderCellDef> เสียชีวิต </th>
+            <td mat-cell *matCellDef="let element"> {{element.NewDeaths}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Confirmed">
+            <th mat-header-cell *matHeaderCellDef> ผู้ป่วยยืนยันสะสม </th>
+            <td mat-cell *matCellDef="let element"> {{element.Confirmed}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Recovered">
+            <th mat-header-cell *matHeaderCellDef> หายป่วยแล้ว </th>
+            <td mat-cell *matCellDef="let element"> {{element.Recovered}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Hospitalized">
+            <th mat-header-cell *matHeaderCellDef> ผู้ป่วยรักษาอยู่ </th>
+            <td mat-cell *matCellDef="let element"> {{element.Hospitalized}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Deaths">
+            <th mat-header-cell *matHeaderCellDef> เสียชีวิตสะสม </th>
+            <td mat-cell *matCellDef="let element"> {{element.Deaths}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Date">
+            <th mat-header-cell *matHeaderCellDef> Date </th>
+            <td mat-cell *matCellDef="let element"> {{element.Date}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>
